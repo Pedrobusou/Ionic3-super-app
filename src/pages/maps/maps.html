@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Maps</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <sebm-google-map id="map" 
+  [latitude] = "latitude" 
+  [longitude] = "longitude" 
+  [zoom] = "zoom"
+  [disableDefaultUI] = "true"> <!-- Disable fullScreen option -->
+  
+  <sebm-google-map-marker
+  [latitude] = "latitude" 
+  [longitude] = "longitude">
+  </sebm-google-map-marker>
+  </sebm-google-map>
+</ion-content>
