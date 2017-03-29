@@ -12,6 +12,7 @@ import { SttPage } from '../pages/stt/stt';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
+import { YoutubePage } from '../pages/youtube/youtube';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,7 +34,8 @@ export class MyApp {
       { title: 'Speech To Text', component: SttPage, icon: "mic" },
       { title: 'Calculator', component: CalculatorPage, icon: "calculator" },
       { title: 'Flashlight', component: FlashlightPage, icon: "flash" },
-      { title: 'Scanner', component: ScannerPage, icon: "qr-scanner" }
+      { title: 'Scanner', component: ScannerPage, icon: "qr-scanner" },
+      { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" }
     ];
   }
 

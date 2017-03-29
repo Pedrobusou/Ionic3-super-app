@@ -12,6 +12,7 @@ import { CalculatorPage } from '../pages/calculator/calculator';
 import { SttPage } from '../pages/stt/stt';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
+import { YoutubePage } from '../pages/youtube/youtube';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,11 +20,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //UTILITIES (Maps, Camera, TTS, STT, Flashlight, BarcodeScanner)
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Camera } from '@ionic-native/camera';
-import { CameraMock } from './camera.mock'
+//import { CameraMock } from './camera.mock'
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+import { Youtube } from '../pipes/youtube';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SttPage,
     CalculatorPage,
     FlashlightPage,
-    ScannerPage
+    ScannerPage,
+    YoutubePage,
+    Youtube
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -55,7 +60,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SttPage,
     CalculatorPage,
     FlashlightPage,
-    ScannerPage
+    ScannerPage,
+    YoutubePage
   ],
   providers: [
     StatusBar,
