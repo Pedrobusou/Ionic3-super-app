@@ -6,8 +6,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   selector: 'page-camera',
   templateUrl: 'camera.html'
 })
-export class CameraPage {
 
+export class CameraPage {
   image: string;
   options: CameraOptions = {
     quality: 100,
@@ -16,11 +16,10 @@ export class CameraPage {
     mediaType: this.camera.MediaType.PICTURE
   }
 
-  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams) { }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CamaraPage');
-  }
+  constructor(
+    private camera: Camera,
+    public navCtrl: NavController,
+    public navParams: NavParams) { }
 
   async takePicture(): Promise<any> {
     try {
@@ -29,5 +28,4 @@ export class CameraPage {
       console.log(e);
     }
   }
-
 }

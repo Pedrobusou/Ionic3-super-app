@@ -1,4 +1,4 @@
-import { Component,  } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -6,10 +6,10 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'maps.html'
 })
 
-export class MapsPage{
-
+export class MapsPage {
   latitude: number = 28.12;
   longitude: number = -15.43;
   zoom: number = 10;
+
   constructor(public navCtrl: NavController) { }
 }

@@ -6,12 +6,17 @@ import { SpeechRecognition, SpeechRecognitionListeningOptionsAndroid, SpeechReco
   selector: 'page-stt',
   templateUrl: 'stt.html'
 })
+
 export class SttPage {
   speechList: Array<string> = [];
   androidOptions: SpeechRecognitionListeningOptionsAndroid;
   iosOptions: SpeechRecognitionListeningOptionsIOS;
 
-  constructor(private platform: Platform, private speech: SpeechRecognition, public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(
+    private platform: Platform,
+    private speech: SpeechRecognition,
+    public navCtrl: NavController,
+    public navParams: NavParams) { }
 
   listenForSpeech(): void {
     this.androidOptions = {
@@ -30,7 +35,7 @@ export class SttPage {
       this.speech.startListening().subscribe(data => this.speechList = data, error => console.log(error));
   }
 
-//Move to constructor and delete "hasPermission"
+  //Move to constructor and delete "hasPermission"
   async getPermission(): Promise<void> {
     try {
       const permission = await this.speech.requestPermission();

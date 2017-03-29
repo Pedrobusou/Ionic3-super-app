@@ -6,16 +6,14 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
   selector: 'page-tts',
   templateUrl: 'tts.html'
 })
+
 export class TtsPage {
   text: string;
 
-  constructor(private tts: TextToSpeech, public navCtrl: NavController, public navParams: NavParams) {
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoquendoPage');
-  }
+  constructor(
+    private tts: TextToSpeech,
+    public navCtrl: NavController,
+    public navParams: NavParams) { }
 
   async sayText(): Promise<any> {
     try {

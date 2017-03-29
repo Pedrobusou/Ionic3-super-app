@@ -10,16 +10,20 @@ import { MapsPage } from '../pages/maps/maps';
 import { TtsPage } from '../pages/tts/tts';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { SttPage } from '../pages/stt/stt';
+import { FlashlightPage } from '../pages/flashlight/flashlight';
+import { ScannerPage } from '../pages/scanner/scanner';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-//UTILITIES (Maps, Camera, TTS)
+//UTILITIES (Maps, Camera, TTS, STT, Flashlight, BarcodeScanner)
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Camera } from '@ionic-native/camera';
 import { CameraMock } from './camera.mock'
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { Flashlight } from '@ionic-native/flashlight';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,9 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
     MapsPage,
     TtsPage,
     SttPage,
-    CalculatorPage
+    CalculatorPage,
+    FlashlightPage,
+    ScannerPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -47,15 +53,19 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
     MapsPage,
     TtsPage,
     SttPage,
-    CalculatorPage
+    CalculatorPage,
+    FlashlightPage,
+    ScannerPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: Camera, useClass: CameraMock }, //use only Camera for phones
+    Camera, //use only <Camera> for phones. <{ provide: Camera, useClass: CameraMock }> for browser
     TextToSpeech,
-    SpeechRecognition
+    SpeechRecognition,
+    Flashlight,
+    BarcodeScanner
   ]
 })
 export class AppModule { }
