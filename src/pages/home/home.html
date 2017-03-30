@@ -3,16 +3,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>Home</ion-title>
+
+    <ion-buttons end>
+      <ion-item>
+        <ion-label icon-only>
+          <ion-icon name="flash" color="energized"></ion-icon>
+        </ion-label>
+        <ion-toggle [(ngModel)]="isOn" (ionChange)="toogleFlash()"></ion-toggle>
+      </ion-item>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic: Frankenstein</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <p>App de pruebas con cámara y GoogleMaps</p>
+  <h3>Ionic: Super App</h3>
+  <p>If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.</p>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Flashlight } from '@ionic-native/flashlight';
 
 @Component({
   selector: 'page-home',
@@ -6,6 +7,27 @@ import { Component } from '@angular/core';
 })
 
 export class HomePage {
+  isOn: boolean = true;
 
-  constructor() { }
+  constructor(private flashlight: Flashlight) { }
+
+  async isAvailable(): Promise<boolean> {
+    try {
+      let available = await this.flashlight.available();
+      return available;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async toogleFlash(): Promise<void> {
+    console.log(this.isOn);
+    try {
+      let available = await this.isAvailable();
+      if (available)
+        await this.flashlight.toggle();
+    } catch (e) {
+      console.error(e);
+    }
+  }
 }
