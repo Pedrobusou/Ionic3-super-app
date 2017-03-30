@@ -23,6 +23,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = HomePage;
   pages: Array<{ title: string, component: any, icon: string }>;
+  activePage;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -39,6 +40,7 @@ export class MyApp {
       { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" },
       { title: 'Call', component: CallPage, icon: "call" }
     ];
+    this.activePage = this.pages[0];
   }
 
   initializeApp() {
@@ -54,5 +56,11 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+
+    this.activePage = page;
+  }
+
+  checkActive(page) {
+    return page == this.activePage;
   }
 }
