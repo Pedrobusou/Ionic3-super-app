@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-youtube',
@@ -8,6 +7,10 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class YoutubePage {
   videos: any[] = [
+    {
+      title: "Create a Phone Call Application with Ionic 2",
+      video: "https://www.youtube.com/embed/7kKcpgcSW60?showinfo=0",
+    },
     {
       title: "Using the DomSanitizer to Embed YouTube Videos in Ionic 2 / Angular Applications",
       video: "https://www.youtube.com/embed/2JeKfQ2r2r8?showinfo=0",
@@ -34,8 +37,5 @@ export class YoutubePage {
     }
   ]
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
-
+  constructor() { }
 }

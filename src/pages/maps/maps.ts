@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-maps',
@@ -11,5 +10,5 @@ export class MapsPage {
   longitude: number = -15.43;
   zoom: number = 10;
 
-  constructor(public navCtrl: NavController) { }
+  constructor() { }
 }

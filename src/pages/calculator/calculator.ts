@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-calculator',
@@ -9,10 +9,7 @@ import { NavController, NavParams, ToastController } from 'ionic-angular';
 export class CalculatorPage {
   screen: string = "";
 
-  constructor(
-    public toastCtrl: ToastController,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
+  constructor(private toastCtrl: ToastController) { }
 
   write(element: string) {
     this.screen += element;

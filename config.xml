@@ -6,8 +6,6 @@
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
-    <!--<allow-navigation href="http://*youtube.com/*" />  To make YT work on ios-->
-
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -41,4 +39,5 @@
     <plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />
     <plugin name="cordova-plugin-flashlight" spec="~3.2.0" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.6" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
 </widget>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 @Component({
@@ -10,10 +9,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class TtsPage {
   text: string;
 
-  constructor(
-    private tts: TextToSpeech,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
+  constructor(private tts: TextToSpeech) { }
 
   async sayText(): Promise<any> {
     try {

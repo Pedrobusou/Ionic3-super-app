@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
@@ -16,10 +15,7 @@ export class CameraPage {
     mediaType: this.camera.MediaType.PICTURE
   }
 
-  constructor(
-    private camera: Camera,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
+  constructor(private camera: Camera) { }
 
   async takePicture(): Promise<any> {
     try {

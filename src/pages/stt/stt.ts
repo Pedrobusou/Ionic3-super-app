@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { SpeechRecognition, SpeechRecognitionListeningOptionsAndroid, SpeechRecognitionListeningOptionsIOS } from '@ionic-native/speech-recognition';
 
 @Component({
@@ -12,11 +12,7 @@ export class SttPage {
   androidOptions: SpeechRecognitionListeningOptionsAndroid;
   iosOptions: SpeechRecognitionListeningOptionsIOS;
 
-  constructor(
-    private platform: Platform,
-    private speech: SpeechRecognition,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
+  constructor(private platform: Platform, private speech: SpeechRecognition) { }
 
   listenForSpeech(): void {
     this.androidOptions = {

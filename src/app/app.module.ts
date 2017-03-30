@@ -13,11 +13,12 @@ import { SttPage } from '../pages/stt/stt';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { YoutubePage } from '../pages/youtube/youtube';
+import { CallPage } from '../pages/call/call';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-//UTILITIES (Maps, Camera, TTS, STT, Flashlight, BarcodeScanner)
+//UTILITIES
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Camera } from '@ionic-native/camera';
 //import { CameraMock } from './camera.mock'
@@ -25,6 +26,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { CallNumber } from '@ionic-native/call-number';
 
 import { Youtube } from '../pipes/youtube';
 
@@ -41,7 +43,8 @@ import { Youtube } from '../pipes/youtube';
     FlashlightPage,
     ScannerPage,
     YoutubePage,
-    Youtube
+    Youtube,
+    CallPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -61,7 +64,8 @@ import { Youtube } from '../pipes/youtube';
     CalculatorPage,
     FlashlightPage,
     ScannerPage,
-    YoutubePage
+    YoutubePage,
+    CallPage
   ],
   providers: [
     StatusBar,
@@ -71,7 +75,8 @@ import { Youtube } from '../pipes/youtube';
     TextToSpeech,
     SpeechRecognition,
     Flashlight,
-    BarcodeScanner
+    BarcodeScanner,
+    CallNumber
   ]
 })
 export class AppModule { }

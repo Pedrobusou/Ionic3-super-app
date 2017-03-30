@@ -13,6 +13,7 @@ import { CalculatorPage } from '../pages/calculator/calculator';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { YoutubePage } from '../pages/youtube/youtube';
+import { CallPage } from '../pages/call/call';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +36,8 @@ export class MyApp {
       { title: 'Calculator', component: CalculatorPage, icon: "calculator" },
       { title: 'Flashlight', component: FlashlightPage, icon: "flash" },
       { title: 'Scanner', component: ScannerPage, icon: "qr-scanner" },
-      { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" }
+      { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" },
+      { title: 'Call', component: CallPage, icon: "call" }
     ];
   }
 
