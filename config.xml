@@ -6,7 +6,7 @@
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
-    <allow-navigation href="http://*youtube.com/*" /> <!-- To make YT work on ios-->
+    <!--<allow-navigation href="http://*youtube.com/*" />  To make YT work on ios-->
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

@@ -10,27 +10,27 @@ export class YoutubePage {
   videos: any[] = [
     {
       title: "Using the DomSanitizer to Embed YouTube Videos in Ionic 2 / Angular Applications",
-      video: "https://www.youtube.com/watch?v=2JeKfQ2r2r8"
+      video: "https://www.youtube.com/embed/2JeKfQ2r2r8?showinfo=0",
     },
     {
       title: "Create a Flashlight Application with Ionic 2",
-      video: "https://www.youtube.com/watch?v=9yZEvkofi24"
+      video: "https://www.youtube.com/embed/9yZEvkofi24?showinfo=0",
     },
     {
       title: "Create a Barcode/QR Code Scanner Application with Ionic 2",
-      video: "https://www.youtube.com/watch?v=bogYgE7aYL8"
+      video: "https://www.youtube.com/embed/bogYgE7aYL8?showinfo=0",
     },
     {
       title: "Speech to Text Application with Ionic 2 and Ionic Native 3+",
-      video: "https://www.youtube.com/watch?v=dPbT_kElSXA"
+      video: "https://www.youtube.com/embed/dPbT_kElSXA?showinfo=0"
     },
     {
       title: "Ionic 2 Text to Speech / Ionic Native 3.x.x",
-      video: "https://www.youtube.com/watch?v=GfKJ49DG7yc"
+      video: "https://www.youtube.com/embed/GfKJ49DG7yc?showinfo=0",
     },
     {
       title: "Mocking an Ionic 2 Camera Application with Ionic Native 3.x+",
-      video: "https://www.youtube.com/watch?v=F8iO1p83Djw"
+      video: "https://www.youtube.com/embed/F8iO1p83Djw?showinfo=0",
     }
   ]
 
