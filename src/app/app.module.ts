@@ -14,6 +14,7 @@ import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { YoutubePage } from '../pages/youtube/youtube';
 import { CallPage } from '../pages/call/call';
+import { BadgesPage } from '../pages/badges/badges';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { CallNumber } from '@ionic-native/call-number';
+import { Badge } from '@ionic-native/badge';
 
 import { Youtube } from '../pipes/youtube';
 
@@ -44,7 +46,8 @@ import { Youtube } from '../pipes/youtube';
     ScannerPage,
     YoutubePage,
     Youtube,
-    CallPage
+    CallPage,
+    BadgesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -65,7 +68,8 @@ import { Youtube } from '../pipes/youtube';
     FlashlightPage,
     ScannerPage,
     YoutubePage,
-    CallPage
+    CallPage,
+    BadgesPage
   ],
   providers: [
     StatusBar,
@@ -76,7 +80,8 @@ import { Youtube } from '../pipes/youtube';
     SpeechRecognition,
     Flashlight,
     BarcodeScanner,
-    CallNumber
+    CallNumber,
+    Badge
   ]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ import { Flashlight } from '@ionic-native/flashlight';
 })
 
 export class HomePage {
-  isOn: boolean = true;
+  isOn: boolean = false;
 
   constructor(private flashlight: Flashlight) { }
 
@@ -21,7 +21,6 @@ export class HomePage {
   }
 
   async toogleFlash(): Promise<void> {
-    console.log(this.isOn);
     try {
       let available = await this.isAvailable();
       if (available)

@@ -14,6 +14,7 @@ import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { YoutubePage } from '../pages/youtube/youtube';
 import { CallPage } from '../pages/call/call';
+import { BadgesPage } from '../pages/badges/badges';
 
 @Component({
   templateUrl: 'app.html'
@@ -38,7 +39,8 @@ export class MyApp {
       { title: 'Flashlight', component: FlashlightPage, icon: "flash" },
       { title: 'Scanner', component: ScannerPage, icon: "qr-scanner" },
       { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" },
-      { title: 'Call', component: CallPage, icon: "call" }
+      { title: 'Call', component: CallPage, icon: "call" },
+      { title: 'Badges', component: BadgesPage, icon: "notifications" }
     ];
     this.activePage = this.pages[0];
   }

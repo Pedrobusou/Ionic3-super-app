@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Badges</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Badge Number</ion-label>
+    <ion-input type="number" [(ngModel)]="badgeNumber"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="setBadges(badgeNumber)">Set Badges to {{badgeNumber}}</button>
+  <button ion-button (click)="increaseBadges(badgeNumber)">Increase Badges by {{badgeNumber}}</button>
+  <button ion-button (click)="decreaseBadges(badgeNumber)">Decrease Badges by {{badgeNumber}}</button>
+  <button ion-button (click)="getBadges()">Get Badges</button>
+  <button ion-button (click)="clearBadges()">Get Badges</button>
+  <button ion-button (click)="requestPermissions()">Request Permissions</button>
+</ion-content>
