@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Firebase Songlist Database</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addSong()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let song of songs | async" (click)="showOptions(song.$key, song.author, song.title)">
+      {{song.author}} - {{song.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>

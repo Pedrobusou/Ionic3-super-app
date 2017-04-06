@@ -4,7 +4,7 @@ import { MyApp } from './app.component';
 
 //PAGES
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { FirebaseSonglistPage } from '../pages/firebaseSonglist/firebaseSonglist';
 import { CameraPage } from '../pages/camera/camera';
 import { MapsPage } from '../pages/maps/maps';
 import { TtsPage } from '../pages/tts/tts';
@@ -32,11 +32,21 @@ import { Badge } from '@ionic-native/badge';
 
 import { Youtube } from '../pipes/youtube';
 
+import { AngularFireModule } from 'angularfire2';
+var firebaseConfig = {
+    apiKey: "AIzaSyDMKg4Xk_1GvbZUtExKbOvv17tQlCCsq30",
+    authDomain: "fir-test-de004.firebaseapp.com",
+    databaseURL: "https://fir-test-de004.firebaseio.com",
+    projectId: "fir-test-de004",
+    storageBucket: "fir-test-de004.appspot.com",
+    messagingSenderId: "991744973627"
+  };
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
+    FirebaseSonglistPage,
     CameraPage,
     MapsPage,
     TtsPage,
@@ -53,13 +63,14 @@ import { Youtube } from '../pipes/youtube';
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
       apiKey: ''
-    })
+    }),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
+    FirebaseSonglistPage,
     CameraPage,
     MapsPage,
     TtsPage,

@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { FirebaseSonglistPage } from '../pages/firebaseSonglist/firebaseSonglist';
 import { CameraPage } from '../pages/camera/camera';
 import { MapsPage } from '../pages/maps/maps';
 import { TtsPage } from '../pages/tts/tts';
@@ -30,7 +30,7 @@ export class MyApp {
     this.initializeApp();
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home" },
-      { title: 'List', component: ListPage, icon: "list" },
+      { title: 'Firebase Songlist', component: FirebaseSonglistPage, icon: "list" },
       { title: 'Camera', component: CameraPage, icon: "camera" },
       { title: 'Maps', component: MapsPage, icon: "pin" },
       { title: 'Text To Speech', component: TtsPage, icon: "text" },

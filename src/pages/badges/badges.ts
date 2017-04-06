@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { Badge } from '@ionic-native/badge';
 
 @Component({
@@ -10,10 +9,7 @@ import { Badge } from '@ionic-native/badge';
 export class BadgesPage {
   badgeNumber: number;
 
-  constructor(
-    private badge: Badge,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
+  constructor(private badge: Badge) { }
 
   async requestPermission() {
     try {
