@@ -14,7 +14,7 @@ export class SttPage {
 
   constructor(private platform: Platform, private speech: SpeechRecognition) { }
 
-  listenForSpeech(): void {
+  listenForSpeech(){
     this.androidOptions = {
       prompt: 'Speak into your phone (android)!'
     }

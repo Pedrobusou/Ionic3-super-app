@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Flashlight } from '@ionic-native/flashlight';
+import { Firebase } from '@ionic-native/firebase';
 
 @Component({
   selector: 'page-home',
@@ -7,9 +8,15 @@ import { Flashlight } from '@ionic-native/flashlight';
 })
 
 export class HomePage {
-  isOn: boolean = false;
 
-  constructor(private flashlight: Flashlight) { }
+  constructor(private firebase: Firebase, private flashlight: Flashlight) {
+    this.firebase.getToken()
+      .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+      .catch(error => console.error('Error getting token', error));
+
+    this.firebase.onTokenRefresh()
+      .subscribe((token: string) => console.log(`Got a new token ${token}`));
+  }
 
   async isAvailable(): Promise<boolean> {
     try {
