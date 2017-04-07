@@ -10,7 +10,6 @@ import { MapsPage } from '../pages/maps/maps';
 import { TtsPage } from '../pages/tts/tts';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { SttPage } from '../pages/stt/stt';
-import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { YoutubePage } from '../pages/youtube/youtube';
 import { CallPage } from '../pages/call/call';
@@ -54,7 +53,6 @@ var firebaseConfig = {
     TtsPage,
     SttPage,
     CalculatorPage,
-    FlashlightPage,
     ScannerPage,
     YoutubePage,
     Youtube,
@@ -78,7 +76,6 @@ var firebaseConfig = {
     TtsPage,
     SttPage,
     CalculatorPage,
-    FlashlightPage,
     ScannerPage,
     YoutubePage,
     CallPage,
