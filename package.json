@@ -21,7 +21,7 @@
     "@angular/platform-server": "2.4.8",
     "@ionic-native/badge": "^3.4.4",
     "@ionic-native/barcode-scanner": "^3.4.2",
-    "@ionic-native/call-number": "^3.4.3",
+    "@ionic-native/call-number": "^3.4.4",
     "@ionic-native/camera": "^3.2.2",
     "@ionic-native/core": "3.2.2",
     "@ionic-native/firebase": "^3.4.4",

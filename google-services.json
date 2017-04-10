@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:991744973627:android:d1e2b88672cd035d",
+        "mobilesdk_app_id": "1:991744973627:android:e9cdb253e76fb055",
         "android_client_info": {
-          "package_name": "superApp.android"
+          "package_name": "com.ionicframework.sidemenup665714"
         }
       },
       "oauth_client": [
