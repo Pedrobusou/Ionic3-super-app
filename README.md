@@ -14,5 +14,11 @@ QR/barcode scanner,
 Youtube embedded tutorials,
 PhoneCall
 
+Now its working with Firebase:
+AngularFire2 to work with a list of songs
+Ionic native firebase for push notifications and analytics
 
-Remember to npm install!
+Remember to:
+-npm install
+-ionic serve
+-ionic state restore
