@@ -35,7 +35,7 @@ import { Youtube } from '../pipes/youtube';
 
 import { AngularFireModule } from 'angularfire2';
 var firebaseConfig = {
-  apiKey: "AIzaSyDMKg4Xk_1GvbZUtExKbOvv17tQlCCsq30",
+  apiKey: "AIzaSyB1-iDN3gGZ9DVtELxav8gXG0KeLRTaAa8", //AIzaSyDMKg4Xk_1GvbZUtExKbOvv17tQlCCsq30
   authDomain: "fir-test-de004.firebaseapp.com",
   databaseURL: "https://fir-test-de004.firebaseio.com",
   projectId: "fir-test-de004",
