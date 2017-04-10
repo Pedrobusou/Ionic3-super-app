@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, ToastController } from 'ionic-angular';
 import { SpeechRecognition, SpeechRecognitionListeningOptionsAndroid, SpeechRecognitionListeningOptionsIOS } from '@ionic-native/speech-recognition';
 
 @Component({
@@ -11,10 +11,22 @@ export class SttPage {
   speechList: Array<string> = [];
   androidOptions: SpeechRecognitionListeningOptionsAndroid;
   iosOptions: SpeechRecognitionListeningOptionsIOS;
+  speechNotSupported: boolean = true;
 
-  constructor(private platform: Platform, private speech: SpeechRecognition) { }
+  constructor(private toastCtrl: ToastController, private platform: Platform, private speech: SpeechRecognition) {
+    this.isSpeechSuported();
+    if (!this.speechNotSupported) this.getPermission();
+  }
 
-  listenForSpeech(){
+  presentToast(msg: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000
+    });
+    toast.present();
+  }
+
+  listenForSpeech() {
     this.androidOptions = {
       prompt: 'Speak into your phone (android)!'
     }
@@ -31,20 +43,9 @@ export class SttPage {
       this.speech.startListening().subscribe(data => this.speechList = data, error => console.log(error));
   }
 
-  //Move to constructor and delete "hasPermission"
   async getPermission(): Promise<void> {
     try {
       const permission = await this.speech.requestPermission();
-      console.log(permission);
-      return permission;
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  async hasPermission(): Promise<boolean> {
-    try {
-      const permission = await this.speech.hasPermission();
       console.log(permission);
       return permission;
     } catch (e) {
@@ -66,6 +67,10 @@ export class SttPage {
     try {
       const isAvailable = await this.speech.isRecognitionAvailable();
       console.log(isAvailable);
+      if (!isAvailable)
+        this.presentToast("Speech recognition service is not available on your system");
+
+      this.speechNotSupported = !isAvailable;
       return isAvailable;
     } catch (e) {
       console.error(e);

@@ -8,11 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="isSpeechSuported()">Is speech supported?</button>
-  <button ion-button (click)="getPermission()">Get Permission</button>
-  <button ion-button (click)="hasPermission()">Has Permission?</button>
-  <button ion-button (click)="getSupportedLanguages()">Get supported languages</button>
-  <button ion-button (click)="listenForSpeech()">Listen for speech</button>
+  <div *ngIf="speechNotSupported">
+    <button ion-button disabled (click)="getSupportedLanguages()">Get supported languages</button>
+    <button ion-button disabled (click)="listenForSpeech()">Listen for speech</button>
+  </div>
+
+  <div *ngIf="!speechNotSupported">
+    <button ion-button (click)="getSupportedLanguages()">Get supported languages</button>
+    <button ion-button (click)="listenForSpeech()">Listen for speech</button>
+  </div>
 
   <ion-card>
     <ion-card-content *ngFor="let speech of speechList">

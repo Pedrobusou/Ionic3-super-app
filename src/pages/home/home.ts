@@ -10,12 +10,13 @@ import { Firebase } from '@ionic-native/firebase';
 export class HomePage {
 
   constructor(private firebase: Firebase, private flashlight: Flashlight) {
-    this.firebase.getToken()
-      .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
-      .catch(error => console.error('Error getting token', error));
-
-    this.firebase.onTokenRefresh()
-      .subscribe((token: string) => console.log(`Got a new token ${token}`));
+    //UNCOMENT TO TEST IN REAL DEVICE
+    /* this.firebase.getToken()
+        .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+        .catch(error => console.error('Error getting token', error));
+  
+      this.firebase.onTokenRefresh()
+        .subscribe((token: string) => console.log(`Got a new token ${token}`));*/
   }
 
   async isAvailable(): Promise<boolean> {
