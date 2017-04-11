@@ -3,6 +3,9 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Firebase } from '@ionic-native/firebase';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
+
 import { HomePage } from '../pages/home/home';
 import { FirebaseSonglistPage } from '../pages/firebaseSonglist/firebaseSonglist';
 import { CameraPage } from '../pages/camera/camera';
@@ -25,7 +28,12 @@ export class MyApp {
   pages: Array<{ title: string, component: any, icon: string }>;
   activePage;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    private ga: GoogleAnalytics,
+    private firebase: Firebase,
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen) {
     this.initializeApp();
     this.pages = [
       { title: 'Home', component: HomePage, icon: "home" },
@@ -45,18 +53,33 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      //FIREBASE
+      //UNCOMENT TO TEST IN REAL DEVICE. COMMENT TO TEST IN BROWSER
+      this.firebase.getToken()
+        .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+        .catch(error => console.error('Error getting token', error));
+
+      this.firebase.onTokenRefresh()
+        .subscribe((token: string) => console.log(`Got a new token ${token}`));
+
+      //GOOGLE ANALYTICS
+      this.ga.startTrackerWithId("UA-96946492-3")
+        .then(() => {
+          console.log('Google analytics is ready now');
+          return this.ga.enableUncaughtExceptionReporting(true)
+        }).then((_success) => {
+          console.log("startTrackerWithId success")
+        }).catch((_error) => {
+          console.log("enableUncaughtExceptionReporting", _error)
+        })
     });
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
-
     this.activePage = page;
   }
 

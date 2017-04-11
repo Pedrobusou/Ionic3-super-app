@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Flashlight } from '@ionic-native/flashlight';
+import { Platform } from 'ionic-angular';
+
 import { Firebase } from '@ionic-native/firebase';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
   selector: 'page-home',
@@ -8,15 +11,17 @@ import { Firebase } from '@ionic-native/firebase';
 })
 
 export class HomePage {
+  constructor(
+    private platform: Platform,
+    private ga: GoogleAnalytics,
+    private firebase: Firebase,
+    private flashlight: Flashlight) {
+    this.firebase.logEvent("MyCustomEvent", { greeting: "Hello!" });
+    this.firebase.setScreenName("My Home Page");
 
-  constructor(private firebase: Firebase, private flashlight: Flashlight) {
-    //UNCOMENT TO TEST IN REAL DEVICE
-    /* this.firebase.getToken()
-        .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
-        .catch(error => console.error('Error getting token', error));
-  
-      this.firebase.onTokenRefresh()
-        .subscribe((token: string) => console.log(`Got a new token ${token}`));*/
+    this.platform.ready().then(() => {
+      ga.trackView("My Home Page");
+    });
   }
 
   async isAvailable(): Promise<boolean> {

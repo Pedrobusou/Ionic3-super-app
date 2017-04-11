@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.sidemenup665714" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>sideMenu_p</name>
+    <name>Super App</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="pedrobusou@hotmail.com">Pedro 'Pedrobusou' Ramos González</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
@@ -42,4 +42,5 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.6" />
     <plugin name="cordova-plugin-firebase" spec="~0.1.20" />
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <plugin name="cordova-plugin-google-analytics" spec="~1.7.9" />
 </widget>

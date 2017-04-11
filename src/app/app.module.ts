@@ -30,6 +30,7 @@ import { CallNumber } from '@ionic-native/call-number';
 import { Badge } from '@ionic-native/badge';
 
 import { Firebase } from '@ionic-native/firebase';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import { Youtube } from '../pipes/youtube';
 
@@ -92,7 +93,8 @@ var firebaseConfig = {
     BarcodeScanner,
     CallNumber,
     Badge,
-    Firebase
+    Firebase,
+    GoogleAnalytics
   ]
 })
 export class AppModule { }
