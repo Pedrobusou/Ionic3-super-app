@@ -9,14 +9,14 @@ GoogleMaps,
 TextToSpeech,
 SpeechToText,
 Calculator,
-Flashlight,
 QR/barcode scanner,
 Youtube embedded tutorials,
-PhoneCall
+PhoneCall,
+Badges.
 
-Now its working with Firebase:
-AngularFire2 to work with a list of songs
-Ionic native firebase for push notifications and analytics
+Now its working with GoogleAnalytics and Firebase:
+-AngularFire2 to work with a database of songs.
+-Ionic native firebase for push notifications, analytics, events.
 
 Remember to:
 -npm install
