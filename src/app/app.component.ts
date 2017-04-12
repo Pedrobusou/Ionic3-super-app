@@ -46,7 +46,7 @@ export class MyApp {
 
       //FIREBASE
       //UNCOMENT TO TEST IN REAL DEVICE. COMMENT TO TEST IN BROWSER
-      /*this.firebase.getToken()
+      this.firebase.getToken()
         .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
         .catch(error => console.error('Error getting token', error));
 
@@ -62,7 +62,7 @@ export class MyApp {
           console.log("startTrackerWithId success")
         }).catch((_error) => {
           console.log("enableUncaughtExceptionReporting", _error)
-        })*/
+        })
     });
   }
 

@@ -30,6 +30,7 @@ export class Scanner {
   async encodeData() {
     try {
       const result = await this.barcode.encode(this.barcode.Encode.TEXT_TYPE, "https://github.com/pedrobusou");
+      console.log(this.results);
     } catch (e) {
       console.error(e);
     }

@@ -6,7 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 
 @Injectable()
-export class Youtube {
+export class YoutubePipe {
 
   constructor(private dom: DomSanitizer) { }
 

@@ -18,13 +18,12 @@ export class Home {
     private firebase: Firebase,
     private flashlight: Flashlight) {
 
-    /* this.firebase.logEvent("MyCustomEvent", { greeting: "Hello!" });
-     this.firebase.logEvent("Connected at", { time: new Date().toISOString() });
-     this.firebase.setScreenName("My Home Page");
- 
-     this.platform.ready().then(() => {
-       ga.trackView("My Home Page");
-     });*/
+    this.firebase.setScreenName("My Home Page");
+    this.firebase.logEvent("MyCustomEvent", { greeting: "Hello!" });
+
+    this.platform.ready().then(() => {
+      ga.trackView("My Home Page");
+    });
   }
 
   async isAvailable(): Promise<boolean> {
