@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-camera',
   templateUrl: 'camera.html'
 })
 
-export class CameraPage {
+export class PhoneCamera {
   image: string;
   options: CameraOptions = {
     quality: 100,

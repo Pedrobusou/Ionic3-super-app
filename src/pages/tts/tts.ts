@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-tts',
   templateUrl: 'tts.html'
 })
 
-export class TtsPage {
+export class Tts {
   text: string;
 
   constructor(private tts: TextToSpeech) { }

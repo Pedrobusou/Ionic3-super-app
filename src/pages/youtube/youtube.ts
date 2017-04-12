@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-youtube',
   templateUrl: 'youtube.html'
 })
 
-export class YoutubePage {
+export class Youtube {
   videos: any[] = [
     {
       title: "Setting Notification Badges",

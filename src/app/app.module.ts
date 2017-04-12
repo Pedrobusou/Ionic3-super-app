@@ -1,19 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-//PAGES
-import { HomePage } from '../pages/home/home';
-import { FirebaseSonglistPage } from '../pages/firebaseSonglist/firebaseSonglist';
-import { CameraPage } from '../pages/camera/camera';
-import { MapsPage } from '../pages/maps/maps';
-import { TtsPage } from '../pages/tts/tts';
-import { CalculatorPage } from '../pages/calculator/calculator';
-import { SttPage } from '../pages/stt/stt';
-import { ScannerPage } from '../pages/scanner/scanner';
-import { YoutubePage } from '../pages/youtube/youtube';
-import { CallPage } from '../pages/call/call';
-import { BadgesPage } from '../pages/badges/badges';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -47,40 +35,19 @@ var firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    FirebaseSonglistPage,
-    CameraPage,
-    MapsPage,
-    TtsPage,
-    SttPage,
-    CalculatorPage,
-    ScannerPage,
-    YoutubePage,
-    Youtube,
-    CallPage,
-    BadgesPage
+    Youtube
   ],
   imports: [
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
       apiKey: ''
     }),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    FirebaseSonglistPage,
-    CameraPage,
-    MapsPage,
-    TtsPage,
-    SttPage,
-    CalculatorPage,
-    ScannerPage,
-    YoutubePage,
-    CallPage,
-    BadgesPage
   ],
   providers: [
     StatusBar,

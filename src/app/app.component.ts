@@ -6,25 +6,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Firebase } from '@ionic-native/firebase';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
-import { HomePage } from '../pages/home/home';
-import { FirebaseSonglistPage } from '../pages/firebaseSonglist/firebaseSonglist';
-import { CameraPage } from '../pages/camera/camera';
-import { MapsPage } from '../pages/maps/maps';
-import { TtsPage } from '../pages/tts/tts';
-import { SttPage } from '../pages/stt/stt';
-import { CalculatorPage } from '../pages/calculator/calculator';
-import { ScannerPage } from '../pages/scanner/scanner';
-import { YoutubePage } from '../pages/youtube/youtube';
-import { CallPage } from '../pages/call/call';
-import { BadgesPage } from '../pages/badges/badges';
-
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = HomePage;
+  rootPage: string = "Home";
   pages: Array<{ title: string, component: any, icon: string }>;
   activePage;
 
@@ -36,17 +24,17 @@ export class MyApp {
     public splashScreen: SplashScreen) {
     this.initializeApp();
     this.pages = [
-      { title: 'Home', component: HomePage, icon: "home" },
-      { title: 'Firebase Songlist', component: FirebaseSonglistPage, icon: "list" },
-      { title: 'Camera', component: CameraPage, icon: "camera" },
-      { title: 'Maps', component: MapsPage, icon: "pin" },
-      { title: 'Text To Speech', component: TtsPage, icon: "text" },
-      { title: 'Speech To Text', component: SttPage, icon: "mic" },
-      { title: 'Calculator', component: CalculatorPage, icon: "calculator" },
-      { title: 'Scanner', component: ScannerPage, icon: "qr-scanner" },
-      { title: 'Youtube', component: YoutubePage, icon: "logo-youtube" },
-      { title: 'Call', component: CallPage, icon: "call" },
-      { title: 'Badges', component: BadgesPage, icon: "notifications" }
+      { title: 'Home', component: "Home", icon: "home" },
+      { title: 'Firebase Songlist', component: "FirebaseSonglist", icon: "list" },
+      { title: 'Camera', component: "PhoneCamera", icon: "camera" },
+      { title: 'Maps', component: "Maps", icon: "pin" },
+      { title: 'Text To Speech', component: "Tts", icon: "text" },
+      { title: 'Speech To Text', component: "Stt", icon: "mic" },
+      { title: 'Calculator', component: "Calculator", icon: "calculator" },
+      { title: 'Scanner', component: "Scanner", icon: "qr-scanner" },
+      { title: 'Youtube', component: "Youtube", icon: "logo-youtube" },
+      { title: 'Call', component: "Call", icon: "call" },
+      { title: 'Badges', component: "Badges", icon: "notifications" }
     ];
     this.activePage = this.pages[0];
   }
@@ -58,7 +46,7 @@ export class MyApp {
 
       //FIREBASE
       //UNCOMENT TO TEST IN REAL DEVICE. COMMENT TO TEST IN BROWSER
-      this.firebase.getToken()
+      /*this.firebase.getToken()
         .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
         .catch(error => console.error('Error getting token', error));
 
@@ -74,7 +62,7 @@ export class MyApp {
           console.log("startTrackerWithId success")
         }).catch((_error) => {
           console.log("enableUncaughtExceptionReporting", _error)
-        })
+        })*/
     });
   }
 

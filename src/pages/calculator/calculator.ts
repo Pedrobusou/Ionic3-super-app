@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { ToastController } from 'ionic-angular';
+import { ToastController, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-calculator',
   templateUrl: 'calculator.html'
 })
 
-export class CalculatorPage {
+export class Calculator {
   screen: string = "";
 
   constructor(private toastCtrl: ToastController) { }

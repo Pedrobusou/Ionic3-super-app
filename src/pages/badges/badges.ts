@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Badge } from '@ionic-native/badge';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-badges',
   templateUrl: 'badges.html'
 })
 
-export class BadgesPage {
+export class Badges {
   badgeNumber: number;
 
   constructor(private badge: Badge) { }

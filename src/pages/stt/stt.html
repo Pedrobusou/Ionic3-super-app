@@ -8,15 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="speechNotSupported">
+  <div *ngIf="speechNotSupported; else enable">
     <button ion-button disabled (click)="getSupportedLanguages()">Get supported languages</button>
     <button ion-button disabled (click)="listenForSpeech()">Listen for speech</button>
   </div>
 
-  <div *ngIf="!speechNotSupported">
+  <ng-template #enable>
     <button ion-button (click)="getSupportedLanguages()">Get supported languages</button>
     <button ion-button (click)="listenForSpeech()">Listen for speech</button>
-  </div>
+  </ng-template>
 
   <ion-card>
     <ion-card-content *ngFor="let speech of speechList">

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { AlertController, ActionSheetController } from 'ionic-angular';
+import { AlertController, ActionSheetController, IonicPage } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
+@IonicPage()
 @Component({
   selector: 'page-firebaseSonglist',
   templateUrl: 'firebaseSonglist.html'
 })
 
-export class FirebaseSonglistPage {
+export class FirebaseSonglist {
   songs: FirebaseListObservable<any>;
 
   constructor(public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, af: AngularFire) {

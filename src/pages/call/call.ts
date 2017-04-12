@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CallNumber } from '@ionic-native/call-number';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-call',
   templateUrl: 'call.html'
 })
 
-export class CallPage {
+export class Call {
   phoneNumber: number;
 
   constructor(private call: CallNumber) { }

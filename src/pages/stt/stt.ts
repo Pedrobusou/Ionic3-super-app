@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { Platform, ToastController } from 'ionic-angular';
+import { Platform, ToastController, IonicPage } from 'ionic-angular';
 import { SpeechRecognition, SpeechRecognitionListeningOptionsAndroid, SpeechRecognitionListeningOptionsIOS } from '@ionic-native/speech-recognition';
 
+@IonicPage()
 @Component({
   selector: 'page-stt',
   templateUrl: 'stt.html'
 })
 
-export class SttPage {
+export class Stt {
   speechList: Array<string> = [];
   androidOptions: SpeechRecognitionListeningOptionsAndroid;
   iosOptions: SpeechRecognitionListeningOptionsIOS;
